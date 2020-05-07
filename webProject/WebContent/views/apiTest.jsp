@@ -10,6 +10,8 @@
 <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 <body>
+	
+	<p>니가 그렇게 싸움을 잘해?</p>
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	
 	<section class="container">
