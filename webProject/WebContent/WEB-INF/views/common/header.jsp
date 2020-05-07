@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/header/style.css">
+<link rel="stylesheet" href="/css/header/responsive.css">
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+<header class="header_area">
+	<div class="main_menu">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+					<a class="navbar-brand logo_h" href="/index.jsp">
+						<img src="/img/logo.png" width="165" height="80">
+						
+					</a>
+					<!-- 메뉴버튼 -->
+					<button class="navbar-toggler" 
+					type="button" 
+					data-toggle="collapse" 
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expended="false"
+					aria-label="Toggle navigation">
+						
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item"><a class="nav-link" href="/noticeList?reqPage=1">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link" href="/photoList">사진게시판</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Menu3</a></li>
+							<li class="nav-item"><a class="nav-link" href="/views/ajaxTest.jsp">Ajax</a></li>
+							<li class="nav-item"><a class="nav-link" href="/views/apiTest.jsp">API</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Menu6</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Menu7</a></li>
+
+						</ul>
+					</div>
+					<div class="right-button">
+						<ul>
+							<c:if test="${empty sessionScope.Member }">
+								<li class="nav-item">
+								<!-- location.href='' 사용해서 한줄로 해결 -->
+								<button class="btn btn-success" onclick="location.href='/loginFrm'">로그인</button>
+								<button class="btn btn-success" onclick="location.href='/joinFrm'">회원가입</button>
+								</li>
+							</c:if>
+							
+							<c:if test="${not empty sessionScope.Member }">
+								<li class="nav-item">
+								<button class="btn btn-danger" onclick="location.href='/mypage?memberId=${sessionScope.Member.memberId}'">${sessionScope.Member.memberName }</button>
+								<button class="btn btn-danger" onclick="location.href='/logout'">로그아웃</button>
+								</li>
+							</c:if>
+						</ul>
+					</div>
+			</div>
+		</nav>
+	</div>
+</header>
