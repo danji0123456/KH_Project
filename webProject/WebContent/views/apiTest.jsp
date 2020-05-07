@@ -11,7 +11,6 @@
 </head>
 <body>
 	
-	<p>니가 그렇게 싸움을 잘해?</p>
 	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>
 	
 	<section class="container">
